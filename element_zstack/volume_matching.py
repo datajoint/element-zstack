@@ -58,34 +58,32 @@ class VolumeMatchTask(dj.Manual):
         """
 
     @classmethod
-    def insert1(cls, vol_seg_keys, **kwargs):
+    def insert1(cls, *args, **kwargs):
+        raise NotImplemented(
+            'Use .insert_stack_pair() to insert a StackMatchTask')
+
+    def insert_stack_pair(self, stack_keys):
         """Insert an entry into the `VolumeMatchTask` and `VolumeMatchTask.Volume` tables.
 
         Args:
-            vol_seg_keys (tuple): a tuple of two cell-segmented volumes
+            stack_keys: a restriction specifying a pair of segmented volumes
         """
-        assert (
-            len(vol_seg_keys) == 2
-        ), f"Volume match task only supports matching two cell-segmented volumes, {len(vol_seg_keys)} are provided"
-        vol_seg_keys = [(volume.Segmentation & k).fetch1("KEY") for k in vol_seg_keys]
-        assert (
-            len(set(vol_seg_keys)) == 2
-        ), "The two specified cell-segmented volumes are identical"
 
+        # validate the stack keys
+        stack_keys = (volume.Segmentation & stack_keys).fetch1("KEY")
+        assert len(
+            stack_keys) == 2, "Stack match task only supports matching two cell-segmented stacks"
+
+        # create a volume pair id
         hashed = hashlib.md5()
-        [
-            hashed.update(str(k).encode())
-            for k in sorted([dict_to_uuid(k) for k in vol_seg_keys])
-        ]
+        for k in sorted(dict_to_uuid(k) for k in stack_keys):
+            hashed.update(k.bytes)
+        key = {'stack_match_task': uuid.UUID(hex=hashed.hexdigest())}
 
-        mkey = {"volume_match_task": uuid.UUID(hex=hashed.hexdigest())}
-        if cls & mkey:
-            assert len(cls.Volume & mkey & vol_seg_keys) == 2
-            return
-
-        with cls.connection.transaction:
-            super().insert1(cls(), mkey, **kwargs)
-            cls.Volume.insert({**mkey, **k} for k in vol_seg_keys)
+        # insert the volume pair
+        with self.connection.transaction:
+            self.insert1(key)
+            self.Volume.insert({**key, **k} for k in stack_keys)
 
 
 @schema
@@ -158,7 +156,8 @@ class VolumeMatch(dj.Computed):
         import point_cloud_registration as pcr
         from scipy.stats import gaussian_kde
 
-        vol_keys = (volume.Segmentation & (VolumeMatchTask.Volume & key)).fetch("KEY")
+        vol_keys = (volume.Segmentation & (
+            VolumeMatchTask.Volume & key)).fetch("KEY")
 
         vol1_points, vol2_points = zip(
             *(volume.Segmentation.Mask & vol_keys).fetch(
