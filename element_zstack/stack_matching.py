@@ -5,7 +5,7 @@ import uuid
 
 from element_interface.utils import dict_to_uuid
 
-from . import volume
+from . import stack
 
 
 schema = dj.Schema()
@@ -20,54 +20,53 @@ def activate(
     """Activate this schema.
     Args:
         schema_name (str): Schema name on the database server to activate the
-            `volume_matching` schema
+            `stack_matching` schema
         create_schema (bool): When True (default), create schema in the database if it
             does not yet exist.
         create_tables (bool): When True (default), create tables in the database if they
             do not yet exist.
     """
-    assert volume.schema.is_activated(), 'The "volume" schema must be activated'
+    assert stack.schema.is_activated(), 'The "stack" schema must be activated'
     schema.activate(
         schema_name,
         create_schema=create_schema,
         create_tables=create_tables,
-        add_objects=volume.__dict__,
+        add_objects=stack.__dict__,
     )
 
 
 @schema
-class VolumeMatchTask(dj.Manual):
+class StackMatchTask(dj.Manual):
     definition = """  # 
-    volume_match_task: uuid
+    stack_match_task: uuid
     """
 
-    class Volume(dj.Part):
+    class Stack(dj.Part):
         definition = """
         -> master
-        -> volume.Segmentation
+        -> Stack.Segmentation
         """
 
     @classmethod
-    def insert1(cls, vol_seg_keys, **kwargs):
+    def insert1(cls, stack_keys):
         """
         Args:
-            vol_seg_keys (tuple): a tuple of two cell-segmented volumes
+            stack_keys: a restriction identifying two cell-segmented stacks, e.g. a list of two dicts.
         """
-        assert len(vol_seg_keys) == 2, f"Volume match task only supports matching two cell-segmented volumes, {len(vol_seg_keys)} are provided"
-        vol_seg_keys = [(volume.Segmentation & k).fetch1("KEY") for k in vol_seg_keys]
-        assert len(set(vol_seg_keys)) == 2, "The two specified cell-segmented volumes are identical"
+        # validate the stack keys
+        stack_keys = (stack.Segmentation & stack_keys).fetch1("KEY")
+        assert len(stack_keys) == 2, "Volume match task only supports matching two cell-segmented volumes"
 
+        # create the unique ID for the stack pair
         hashed = hashlib.md5()
-        [hashed.update(str(k).encode()) for k in sorted([dict_to_uuid(k) for k in vol_seg_keys])]
+        for k in sorted(dict_to_uuid(k) for k in stack_keys):
+            hashed.update(k.bytes)
+        key = {'stack_match_task': uuid.UUID(hex=hashed.hexdigest())}
 
-        mkey = {'volume_match_task': uuid.UUID(hex=hashed.hexdigest())}
-        if cls & mkey:
-            assert len(cls.Volume & mkey & vol_seg_keys) == 2
-            return
-
+        # check if it has already been inserted
         with cls.connection.transaction:
-            super().insert1(cls(), mkey, **kwargs)
-            cls.Volume.insert({**mkey, **k} for k in vol_seg_keys)
+            super().insert1(cls(), key)
+            cls.Volume.insert(({**key, **k} for k in vol_seg_keys))
 
 
 @schema
@@ -76,7 +75,7 @@ class VolumeMatch(dj.Computed):
     -> VolumeMatchTask
     ---
     execution_time: datetime
-    execution_duration: float  # (hr)
+    execution_duration: float  # (hours)
     """
 
     class Transformation(dj.Part):
