@@ -68,7 +68,6 @@ class VolumeMatchTask(dj.Manual):
         Args:
             stack_keys: a restriction specifying a pair of segmented volumes
         """
-
         # validate the stack keys
         stack_keys = (volume.Segmentation & stack_keys).fetch1("KEY")
         assert len(
@@ -98,26 +97,14 @@ class VolumeMatch(dj.Computed):
 
     definition = """
     -> VolumeMatchTask
-    ---
-    execution_time: datetime
-    execution_duration: float  # (hr)
     """
 
     class Transformation(dj.Part):
-        """Store the transformation matrix to the common space.
-
-        Attributes:
-            VolumeMatch (foreign key): Primary key from `VolumeMatch`.
-            VolumeMatchTask.Volume (foreign key): Primary key from `VolumeMatchTask.Volume`.
-            transformation_matrix (longblob): the transformation matrix to
-            transform to the common space.
-        """
-
         definition = """  # transformation matrix
         -> master
         -> VolumeMatchTask.Volume
         ---
-        transformation_matrix: longblob  # the transformation matrix to transform to the common space
+        transformation : longblob  # 4x4 affine transformation matrix  
         """
 
     class CommonMask(dj.Part):
@@ -141,7 +128,6 @@ class VolumeMatch(dj.Computed):
             `VolumeMatchTask.Volume`.
             volume.Segmentation.Mask (foreign key): Primary key from
             `volume.Segmentation.Mask`.
-            confidence (float): confidence in the volume registration and cell matching between the segmented volumes.
         """
 
         definition = """
@@ -149,7 +135,6 @@ class VolumeMatch(dj.Computed):
         -> VolumeMatchTask.Volume
         ---
         -> volume.Segmentation.Mask
-        confidence: float
         """
 
     def make(self, key):
@@ -157,12 +142,27 @@ class VolumeMatch(dj.Computed):
 
         stack_keys = (volume.Segmentation & (
             VolumeMatchTask.Volume & key)).fetch("KEY")
+
+        keys1, points1 = (volume.Segmentation.Mask & stack_keys[0]).fetch(
+            "KEY", "mask_center_x", "mask_center_y", "mask_center_z"
+        )
+        keys2, points2 = (volume.Segmentation.Mask & stack_keys[1]).fetch(
+            "mask_center_x", "mask_center_y", "mask_center_z"
+        )
+        points1 = np.hstack(points1)
+        points2 = np.hstack(points2)
+
+        transform3, offset, control_points = pcr.register(
+            points2, points1, progress_bar=True)
         
-        points1 = (volume.Segmentation.Mask & stack_keys[0]).fetch(
-                "mask_center_x", "mask_center_y", "mask_center_z"
-            )
-        points2 = (volume.Segmentation.Mask & stack_keys[1]).fetch(
-                "mask_center_x", "mask_center_y", "mask_center_z"
-            )
-        
-        transform, offset, control_points = pcr.register(points2, points1, progress_bar=True)
+        transform = np.identity(4)
+        transform[:3,:3] = transform3
+        transform[:3, 3] = offset
+
+        self.Tranformation.insert1(dict(key, **stack_keys[0], tranformation=np.identity(4)))
+        self.Tranformation.insert1(dict(key, **stack_keys[1], tranformation=transform))
+
+        for i, i1, i2 in enumerate(control_points):
+            self.CommonMask.insert1(dict(key, common_mask=i))
+            self.VolumeMask.insert1(dict(keys1[i1], common_mask=i))
+            self.VolumeMask.insert1(dict(keys2[i2], common_mask=i))
