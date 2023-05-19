@@ -8,27 +8,27 @@
       
       
       
-        <link rel="canonical" href="http://localhost/docs/elements/element-zstack/0.1/pipeline/">
+        <link rel="canonical" href="http://localhost/docs/elements/element-zstack/0.1/api/workflow_zstack/reference/">
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../pipeline/">
       
       
-        <link rel="next" href="../tutorials/">
+        <link rel="next" href="../version/">
       
-      <link rel="icon" href="../assets/images/company-logo-blue.png">
+      <link rel="icon" href="../../../assets/images/company-logo-blue.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
     
     
       
-        <title>Data Pipeline - DataJoint Documentation</title>
+        <title>reference.py - DataJoint Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.85bb2934.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a6bdf11c.min.css">
       
       
 
@@ -44,11 +44,11 @@
       
     
     
-      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
     
-      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#data-pipeline" class="md-skip">
+        <a href="#workflow_zstack.reference" class="md-skip">
           Skip to content
         </a>
       
@@ -97,7 +97,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="DataJoint Documentation" class="md-header__button md-logo" aria-label="DataJoint Documentation" data-md-component="logo">
+    <a href="../../.." title="DataJoint Documentation" class="md-header__button md-logo" aria-label="DataJoint Documentation" data-md-component="logo">
       
   
   <?xml version="1.0" encoding="utf-8"?>
@@ -126,7 +126,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Data Pipeline
+              reference.py
             
           </span>
         </div>
@@ -233,7 +233,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--integrated" aria-label="" data-md-level="0">
     <label class="md-nav__title" for="__drawer">
-        <a href=".." title="DataJoint Documentation"
+        <a href="../../.." title="DataJoint Documentation"
             class="md-nav__button md-logo" aria-label="DataJoint Documentation" data-md-component="logo">
             
   
@@ -276,7 +276,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Element ZStack
       </a>
     </li>
@@ -289,87 +289,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Data Pipeline
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../pipeline/" class="md-nav__link">
         Data Pipeline
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#reference-schema-api-docs" class="md-nav__link">
-    reference schema (API docs)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#subject-schema-api-docs" class="md-nav__link">
-    subject schema (API docs)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#session-schema-api-docs" class="md-nav__link">
-    session schema (API docs)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scan-schema-api-docs" class="md-nav__link">
-    scan schema (API docs)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#volume-schema-api-docs" class="md-nav__link">
-    volume schema (API docs)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bossdb-schema-api-docs" class="md-nav__link">
-    bossdb schema (API docs)
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -394,7 +318,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../tutorials/">Tutorials</a>
+          <a href="../../../tutorials/">Tutorials</a>
           
             <label for="__nav_3">
               <span class="md-nav__icon md-icon"></span>
@@ -415,7 +339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorials/tutorial.ipynb" class="md-nav__link">
+      <a href="../../../tutorials/tutorial.ipynb" class="md-nav__link">
         Tutorial notebook
       </a>
     </li>
@@ -437,7 +361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../concepts/" class="md-nav__link">
+      <a href="../../../concepts/" class="md-nav__link">
         Concepts
       </a>
     </li>
@@ -452,7 +376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../partnerships/" class="md-nav__link">
+      <a href="../../../partnerships/" class="md-nav__link">
         Key Partnerships
       </a>
     </li>
@@ -467,7 +391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../roadmap/" class="md-nav__link">
+      <a href="../../../roadmap/" class="md-nav__link">
         Roadmap
       </a>
     </li>
@@ -482,7 +406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../citation/" class="md-nav__link">
+      <a href="../../../citation/" class="md-nav__link">
         Citation
       </a>
     </li>
@@ -495,14 +419,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
       
       
       
@@ -511,7 +437,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_8">
           <span class="md-nav__icon md-icon"></span>
           API
@@ -551,7 +477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/element_zstack/bossdb/" class="md-nav__link">
+      <a href="../../element_zstack/bossdb/" class="md-nav__link">
         bossdb.py
       </a>
     </li>
@@ -592,7 +518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/element_zstack/export/bossdb_interface/" class="md-nav__link">
+      <a href="../../element_zstack/export/bossdb_interface/" class="md-nav__link">
         bossdb_interface.py
       </a>
     </li>
@@ -613,7 +539,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/element_zstack/version/" class="md-nav__link">
+      <a href="../../element_zstack/version/" class="md-nav__link">
         version.py
       </a>
     </li>
@@ -627,7 +553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/element_zstack/volume/" class="md-nav__link">
+      <a href="../../element_zstack/volume/" class="md-nav__link">
         volume.py
       </a>
     </li>
@@ -646,14 +572,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" checked>
       
       
       
@@ -662,7 +590,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_8_2">
           <span class="md-nav__icon md-icon"></span>
           workflow_zstack
@@ -675,7 +603,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/workflow_zstack/paths/" class="md-nav__link">
+      <a href="../paths/" class="md-nav__link">
         paths.py
       </a>
     </li>
@@ -689,7 +617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/workflow_zstack/pipeline/" class="md-nav__link">
+      <a href="../pipeline/" class="md-nav__link">
         pipeline.py
       </a>
     </li>
@@ -701,11 +629,55 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../api/workflow_zstack/reference/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          reference.py
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         reference.py
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#workflow_zstack.reference" class="md-nav__link">
+    workflow_zstack.reference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow_zstack.reference.Device" class="md-nav__link">
+    Device
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -717,7 +689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/workflow_zstack/version/" class="md-nav__link">
+      <a href="../version/" class="md-nav__link">
         version.py
       </a>
     </li>
@@ -746,7 +718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../changelog/" class="md-nav__link">
+      <a href="../../../changelog/" class="md-nav__link">
         Changelog
       </a>
     </li>
@@ -767,147 +739,142 @@
                 
                   
 
-  
-  
+
+  <h1>reference.py</h1>
+
+<div class="doc doc-object doc-module">
 
 
-<h1 id="data-pipeline">Data Pipeline<a class="headerlink" href="#data-pipeline" title="Permanent link">&para;</a></h1>
-<p>Element ZStack is composed of two main schemas, <code>volume</code> and <code>bossdb</code>. Data 
-export to BossDB is handled with the <code>bossdb</code> schema and upload utilities.</p>
-<ul>
-<li><code>volume</code> module - performs segmentation of volumetric microscopic images with 
-<code>cellpose</code>.</li>
-</ul>
-<ul>
-<li><code>bossdb</code> module - uploads data to BossDB, creates a Neuroglancer visualization, and 
-stores the relevant URLs.</li>
-</ul>
-<p>Each node in the following diagram represents the analysis code in the pipeline and the
-corresponding table in the database.  Within the workflow, Element ZStack
-connects to upstream Elements including Lab, Animal, Session, and Calcium Imaging. For 
-more detailed documentation on each table, see the API docs for the respective schemas.</p>
-<p><img alt="pipeline" src="https://raw.githubusercontent.com/datajoint/element-zstack/main/images/pipeline.svg" /></p>
-<h3 id="reference-schema-api-docs"><code>reference</code> schema (<a href="https://datajoint.com/docs/elements/element-zstack/latest/api/workflow_zstack/reference">API docs</a>)<a class="headerlink" href="#reference-schema-api-docs" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Table</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Device</td>
-<td>Lab equipment metadata</td>
-</tr>
-</tbody>
-</table>
-<h3 id="subject-schema-api-docs"><code>subject</code> schema (<a href="https://datajoint.com/docs/elements/element-animal/latest/api/element_animal/subject">API docs</a>)<a class="headerlink" href="#subject-schema-api-docs" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Although not required, most choose to connect the <code>Session</code> table to a <code>Subject</code> table.</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Table</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Subject</td>
-<td>Basic information of the research subject</td>
-</tr>
-</tbody>
-</table>
-<h3 id="session-schema-api-docs"><code>session</code> schema (<a href="https://datajoint.com/docs/elements/element-session/latest/api/element_session/session_with_datetime">API docs</a>)<a class="headerlink" href="#session-schema-api-docs" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Table</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Session</td>
-<td>Unique experimental session identifier</td>
-</tr>
-</tbody>
-</table>
-<h3 id="scan-schema-api-docs"><code>scan</code> schema (<a href="https://datajoint.com/docs/elements/element-calcium-imaging/latest/api/element_calcium_imaging/scan">API docs</a>)<a class="headerlink" href="#scan-schema-api-docs" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Table</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Scan</td>
-<td>A set of imaging scans performed in a single session</td>
-</tr>
-</tbody>
-</table>
-<h3 id="volume-schema-api-docs"><code>volume</code> schema (<a href="https://datajoint.com/docs/elements/element-zstack/latest/api/element_zstack/volume">API docs</a>)<a class="headerlink" href="#volume-schema-api-docs" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Table</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Volume</td>
-<td>Details about the volumetric microscopic images</td>
-</tr>
-<tr>
-<td>VoxelSize</td>
-<td>Voxel size information about a volume in millimeters</td>
-</tr>
-<tr>
-<td>SegmentationParamSet</td>
-<td>Parameters required for segmentation of the volumetric scans</td>
-</tr>
-<tr>
-<td>SegmentationTask</td>
-<td>Task defined by a combination of Volume and SegmentationParamSet</td>
-</tr>
-<tr>
-<td>Segmentation</td>
-<td>The core table that executes a SegmentationTask</td>
-</tr>
-<tr>
-<td>Segmentation.Mask</td>
-<td>Details of the masks identified from the segmentation</td>
-</tr>
-</tbody>
-</table>
-<h3 id="bossdb-schema-api-docs"><code>bossdb</code> schema (<a href="https://datajoint.com/docs/elements/element-zstack/latest/api/element_zstack/bossdb">API docs</a>)<a class="headerlink" href="#bossdb-schema-api-docs" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Table</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>VolumeUploadTask</td>
-<td>Names of the collection, experiment, and channel where data will be uploaded to BossDB</td>
-</tr>
-<tr>
-<td>VolumeUpload</td>
-<td>Uploads image and segmentation data to BossDB</td>
-</tr>
-<tr>
-<td>VolumeUpload.WebAddress</td>
-<td>Stores the BossDB and Neuroglancer URLs for each upload</td>
-</tr>
-</tbody>
-</table>
+<a id="workflow_zstack.reference"></a>
+  <div class="doc doc-contents first">
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="workflow_zstack.reference.Device" class="doc doc-heading">
+        <code>Device</code>
+
+
+<a href="#workflow_zstack.reference.Device" class="headerlink" title="Permanent link">&para;</a></h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><span title="datajoint">dj</span>.<span title="datajoint.Lookup">Lookup</span></code></p>
+
+  
+      <p>Table for managing lab equipment.</p>
+
+  <p><strong>Attributes:</strong></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><code>device</code></td>
+          <td>
+                <code> varchar(32) </code>
+          </td>
+          <td><p>Device short name.</p></td>
+        </tr>
+        <tr>
+          <td><code>modality</code></td>
+          <td>
+                <code> varchar(64) </code>
+          </td>
+          <td><p>Modality for which this device is used.</p></td>
+        </tr>
+        <tr>
+          <td><code>description</code></td>
+          <td>
+                <code> varchar(256) </code>
+          </td>
+          <td><p>Optional. Description of device.</p></td>
+        </tr>
+    </tbody>
+  </table>
+
+
+        <details class="quote">
+          <summary>Source code in <code>workflow_zstack/reference.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nd">@schema</span>
+<span class="k">class</span> <span class="nc">Device</span><span class="p">(</span><span class="n">dj</span><span class="o">.</span><span class="n">Lookup</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Table for managing lab equipment.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        device ( varchar(32) ): Device short name.</span>
+<span class="sd">        modality ( varchar(64) ): Modality for which this device is used.</span>
+<span class="sd">        description ( varchar(256) ): Optional. Description of device.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">definition</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    device             : varchar(32)</span>
+<span class="s2">    ---</span>
+<span class="s2">    modality           : varchar(64)</span>
+<span class="s2">    description=null   : varchar(256)</span>
+<span class="s2">    &quot;&quot;&quot;</span>
+    <span class="n">contents</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">[</span><span class="s2">&quot;scanner1&quot;</span><span class="p">,</span> <span class="s2">&quot;fluorescence microscope&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">],</span>
+    <span class="p">]</span>
+</code></pre></div></td></tr></table></div>
+        </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+
+
+
+  </div>
+
+  </div>
+
+</div>
 
 
 
@@ -1026,10 +993,10 @@ more detailed documentation on each table, see the API docs for the respective s
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["toc.integrate", "content.code.annotate"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.integrate", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b4d07000.min.js"></script>
       
         <script src="https://js-na1.hs-scripts.com/23133402.js"></script>
       
