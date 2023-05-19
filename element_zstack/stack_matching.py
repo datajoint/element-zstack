@@ -48,14 +48,17 @@ class StackMatchTask(dj.Manual):
         """
 
     @classmethod
-    def insert1(cls, stack_keys):
+    def insert1(cls, *args, **kwargs):
+        raise NotImplemented('Use .insert_stack_pair() to insert a StackMatchTask')
+
+    def insert_tack_pair(cls, stack_keys):
         """
         Args:
             stack_keys: a restriction identifying two cell-segmented stacks, e.g. a list of two dicts.
         """
         # validate the stack keys
         stack_keys = (stack.Segmentation & stack_keys).fetch1("KEY")
-        assert len(stack_keys) == 2, "Volume match task only supports matching two cell-segmented volumes"
+        assert len(stack_keys) == 2, "Stack match task only supports matching two cell-segmented stacks"
 
         # create the unique ID for the stack pair
         hashed = hashlib.md5()
@@ -70,9 +73,9 @@ class StackMatchTask(dj.Manual):
 
 
 @schema
-class VolumeMatch(dj.Computed):
+class StackMatch(dj.Computed):
     definition = """
-    -> VolumeMatchTask
+    -> StackMatchTask
     ---
     execution_time: datetime
     execution_duration: float  # (hours)
@@ -91,22 +94,21 @@ class VolumeMatch(dj.Computed):
         common_mask: smallint
         """
 
-    class VolumeMask(dj.Part):
+    class StackMask(dj.Part):
         definition = """
         -> master.CommonMask
-        -> VolumeMatchTask.Volume
+        -> StackMatchTask.Volume
         ---
-        -> volume.Segmentation.Mask
+        -> stack.Segmentation.Mask
         confidence: float
         """
 
     def make(self, key):
         import point_cloud_registration as pcr
-        from scipy.stats import gaussian_kde
 
-        vol_keys = (volume.Segmentation & (VolumeMatchTask.Volume & key)).fetch('KEY')
+        stack_keys = (stack.Segmentation & (VolumeMatchTask.Volume & key)).fetch('KEY')
 
-        vol1_points, vol2_points = zip(*(volume.Segmentation.Mask & vol_keys).fetch(
+        vol1_points, vol2_points = zip(*(stack.Segmentation.Mask & vol_keys).fetch(
             'mask_center_x', 'mask_center_y', 'mask_center_z'))
 
         vol1_points = np.hstack([*vol1_points])
