@@ -154,13 +154,15 @@ class VolumeMatch(dj.Computed):
 
         transform3, offset, control_points = pcr.register(
             points2, points1, progress_bar=True)
-        
+
         transform = np.identity(4)
-        transform[:3,:3] = transform3
+        transform[:3, :3] = transform3
         transform[:3, 3] = offset
 
-        self.Tranformation.insert1(dict(key, **stack_keys[0], tranformation=np.identity(4)))
-        self.Tranformation.insert1(dict(key, **stack_keys[1], tranformation=transform))
+        self.Tranformation.insert1(
+            dict(key, **stack_keys[0], tranformation=np.identity(4)))
+        self.Tranformation.insert1(
+            dict(key, **stack_keys[1], tranformation=transform))
 
         for i, i1, i2 in enumerate(control_points):
             self.CommonMask.insert1(dict(key, common_mask=i))
