@@ -72,7 +72,7 @@ class VolumeMatchTask(dj.Manual):
         # validate the stack keys
         stack_keys = (volume.Segmentation & stack_keys).fetch1("KEY")
         assert len(
-            stack_keys) == 2, "Stack match task only supports matching two cell-segmented stacks"
+            stack_keys) == 2, f"Volume matching task requires two segmented volumes. {len(stack_keys)} were given"
 
         # create a volume pair id
         hashed = hashlib.md5()
@@ -154,29 +154,15 @@ class VolumeMatch(dj.Computed):
 
     def make(self, key):
         import point_cloud_registration as pcr
-        from scipy.stats import gaussian_kde
 
-        vol_keys = (volume.Segmentation & (
+        stack_keys = (volume.Segmentation & (
             VolumeMatchTask.Volume & key)).fetch("KEY")
-
-        vol1_points, vol2_points = zip(
-            *(volume.Segmentation.Mask & vol_keys).fetch(
+        
+        points1 = (volume.Segmentation.Mask & stack_keys[0]).fetch(
                 "mask_center_x", "mask_center_y", "mask_center_z"
             )
-        )
-
-        vol1_points = np.hstack([*vol1_points])
-        vol2_points = np.hstack([*vol2_points])
-
-        tetras1 = pcr.make_normal_tetras(vol1_points)
-        tetras2 = pcr.make_normal_tetras(vol2_points)
-
-        pcr.compute_canonical_features(tetras1)
-        pcr.remove_common_tetras(tetras1)
-
-        pcr.compute_canonical_features(tetras2)
-        pcr.remove_common_tetras(tetras2)
-
-        distances, matches = pcr.match_features(tetras1, tetras2)
-
-        # add complete set of steps once point-cloud-registration algorithm is complete
+        points2 = (volume.Segmentation.Mask & stack_keys[1]).fetch(
+                "mask_center_x", "mask_center_y", "mask_center_z"
+            )
+        
+        transform, offset, control_points = pcr.register(points2, points1, progress_bar=True)
