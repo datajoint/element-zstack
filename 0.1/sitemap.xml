@@ -51,7 +51,27 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>http://localhost/docs/elements/element-zstack/0.1/api/workflow_zstack/paths/</loc>
+         <lastmod>2023-05-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://localhost/docs/elements/element-zstack/0.1/api/workflow_zstack/pipeline/</loc>
+         <lastmod>2023-05-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://localhost/docs/elements/element-zstack/0.1/api/workflow_zstack/reference/</loc>
+         <lastmod>2023-05-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>http://localhost/docs/elements/element-zstack/0.1/tutorials/</loc>
+         <lastmod>2023-05-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>http://localhost/docs/elements/element-zstack/0.1/tutorials/tutorial/</loc>
          <lastmod>2023-05-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
