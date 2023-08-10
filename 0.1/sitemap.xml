@@ -2,77 +2,77 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>http://localhost/docs/elements/element-zstack/0.1/</loc>
-         <lastmod>2023-05-19</lastmod>
+         <lastmod>2023-08-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://localhost/docs/elements/element-zstack/0.1/changelog/</loc>
-         <lastmod>2023-05-19</lastmod>
+         <lastmod>2023-08-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://localhost/docs/elements/element-zstack/0.1/citation/</loc>
-         <lastmod>2023-05-19</lastmod>
+         <lastmod>2023-08-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://localhost/docs/elements/element-zstack/0.1/concepts/</loc>
-         <lastmod>2023-05-19</lastmod>
+         <lastmod>2023-08-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://localhost/docs/elements/element-zstack/0.1/partnerships/</loc>
-         <lastmod>2023-05-19</lastmod>
+         <lastmod>2023-08-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://localhost/docs/elements/element-zstack/0.1/pipeline/</loc>
-         <lastmod>2023-05-19</lastmod>
+         <lastmod>2023-08-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://localhost/docs/elements/element-zstack/0.1/roadmap/</loc>
-         <lastmod>2023-05-19</lastmod>
+         <lastmod>2023-08-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://localhost/docs/elements/element-zstack/0.1/api/element_zstack/bossdb/</loc>
-         <lastmod>2023-05-19</lastmod>
+         <lastmod>2023-08-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://localhost/docs/elements/element-zstack/0.1/api/element_zstack/volume/</loc>
-         <lastmod>2023-05-19</lastmod>
+         <lastmod>2023-08-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://localhost/docs/elements/element-zstack/0.1/api/element_zstack/export/bossdb_interface/</loc>
-         <lastmod>2023-05-19</lastmod>
+         <lastmod>2023-08-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://localhost/docs/elements/element-zstack/0.1/api/workflow_zstack/paths/</loc>
-         <lastmod>2023-05-19</lastmod>
+         <lastmod>2023-08-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://localhost/docs/elements/element-zstack/0.1/api/workflow_zstack/pipeline/</loc>
-         <lastmod>2023-05-19</lastmod>
+         <lastmod>2023-08-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://localhost/docs/elements/element-zstack/0.1/api/workflow_zstack/reference/</loc>
-         <lastmod>2023-05-19</lastmod>
+         <lastmod>2023-08-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://localhost/docs/elements/element-zstack/0.1/tutorials/</loc>
-         <lastmod>2023-05-19</lastmod>
+         <lastmod>2023-08-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>http://localhost/docs/elements/element-zstack/0.1/tutorials/tutorial/</loc>
-         <lastmod>2023-05-19</lastmod>
+         <lastmod>2023-08-10</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

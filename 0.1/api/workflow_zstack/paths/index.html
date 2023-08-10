@@ -17,7 +17,7 @@
         <link rel="next" href="../pipeline/">
       
       <link rel="icon" href="../../../assets/images/company-logo-blue.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
     
     
       
@@ -25,10 +25,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -737,6 +737,7 @@
 
 
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -751,6 +752,8 @@
   
       <p>Return root directory for volumetric data in dj.config</p>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -764,14 +767,18 @@
 <td><code>path</code></td>          <td>
                 <code>any</code>
           </td>
-          <td><p>List of path(s) if available or None</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>List of path(s) if available or None</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>workflow_zstack/paths.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 9</span>
+          <details class="quote">
+            <summary>Source code in <code>workflow_zstack/paths.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
@@ -797,10 +804,11 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">vol_root_dirs</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 
 
@@ -821,6 +829,8 @@
   
       <p>Retrieve the ScanImage file associated with a given Scan.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -837,13 +847,19 @@
           <td>
                 <code>dict</code>
           </td>
-          <td><p>Primary key from Scan.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Primary key from Scan.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -858,10 +874,16 @@
 <td><code>path</code></td>          <td>
                 <code>str</code>
           </td>
-          <td><p>Absolute path of the scan file.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Absolute path of the scan file.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Raises:</strong></p>
   <table>
@@ -876,14 +898,18 @@
           <td>
                 <code>FileNotFoundError</code>
           </td>
-          <td><p>If the tiff file(s) are not found.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>If the tiff file(s) are not found.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>workflow_zstack/paths.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">24</span>
+          <details class="quote">
+            <summary>Source code in <code>workflow_zstack/paths.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">24</span>
 <span class="normal">25</span>
 <span class="normal">26</span>
 <span class="normal">27</span>
@@ -933,7 +959,7 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No tiff file found in </span><span class="si">{</span><span class="n">sess_dir</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
@@ -1064,12 +1090,14 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.integrate", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.integrate", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
-        <script src="https://js-na1.hs-scripts.com/23133402.js"></script>
+        
+          <script src="https://js-na1.hs-scripts.com/23133402.js"></script>
+        
       
     
   </body>

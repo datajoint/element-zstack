@@ -17,7 +17,7 @@
         <link rel="next" href="../../workflow_zstack/paths/">
       
       <link rel="icon" href="../../../assets/images/company-logo-blue.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
     
     
       
@@ -25,10 +25,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -825,6 +825,7 @@
 
 
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -838,6 +839,8 @@
   <div class="doc doc-contents ">
   
       <p>Activate this schema</p>
+
+
 
   <p><strong>Parameters:</strong></p>
   <table>
@@ -855,7 +858,11 @@
           <td>
                 <code>str</code>
           </td>
-          <td><p>schema name on the database server to activate the <code>zstack</code> element</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>schema name on the database server to activate the <code>zstack</code> element</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -865,7 +872,11 @@
           <td>
                 <code>bool</code>
           </td>
-          <td><p>when True (default), create schema in the database</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>when True (default), create schema in the database</p>
+            </div>
+          </td>
           <td>
                 <code>True</code>
           </td>
@@ -875,7 +886,11 @@
           <td>
                 <code>bool</code>
           </td>
-          <td><p>when True (default), create schema tables in the database if they do not yet exist.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>when True (default), create schema tables in the database if they do not yet exist.</p>
+            </div>
+          </td>
           <td>
                 <code>True</code>
           </td>
@@ -885,7 +900,11 @@
           <td>
                 <code>str</code>
           </td>
-          <td><p>A string containing the module name or module</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A string containing the module name or module</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -904,9 +923,9 @@ director(y/ies) with all volumetric data, as a list of string(s).
 get_volume_tif_file: When given a scan key (dict), returns the full path
 to the TIF file of the volumetric data associated with a given scan.</p>
 </details>
-      <details class="quote">
-        <summary>Source code in <code>element_zstack/volume.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">19</span>
+          <details class="quote">
+            <summary>Source code in <code>element_zstack/volume.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">19</span>
 <span class="normal">20</span>
 <span class="normal">21</span>
 <span class="normal">22</span>
@@ -988,10 +1007,11 @@ to the TIF file of the volumetric data associated with a given scan.</p>
         <span class="n">add_objects</span><span class="o">=</span><span class="n">_linking_module</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">,</span>
     <span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 
 
@@ -1013,6 +1033,8 @@ to the TIF file of the volumetric data associated with a given scan.</p>
       <p>Fetches absolute data path to volume data directories.</p>
 <p>The absolute path here is used as a reference for all downstream relative paths used in DataJoint.</p>
 
+
+
   <p><strong>Returns:</strong></p>
   <table>
     <thead>
@@ -1026,14 +1048,18 @@ to the TIF file of the volumetric data associated with a given scan.</p>
           <td>
                 <code>list</code>
           </td>
-          <td><p>A list of the absolute path(s) to volume data directories.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A list of the absolute path(s) to volume data directories.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>element_zstack/volume.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">65</span>
+          <details class="quote">
+            <summary>Source code in <code>element_zstack/volume.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">65</span>
 <span class="normal">66</span>
 <span class="normal">67</span>
 <span class="normal">68</span>
@@ -1059,10 +1085,11 @@ to the TIF file of the volumetric data associated with a given scan.</p>
 
     <span class="k">return</span> <span class="n">root_directories</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
+
 
 
 
@@ -1083,6 +1110,8 @@ to the TIF file of the volumetric data associated with a given scan.</p>
   
       <p>Retrieve the full path to the TIF file of the volumetric data associated with a given scan.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -1099,13 +1128,19 @@ to the TIF file of the volumetric data associated with a given scan.</p>
           <td>
                 <code>dict</code>
           </td>
-          <td><p>Primary key of a Scan entry.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Primary key of a Scan entry.</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
         </tr>
     </tbody>
   </table>
+
+
 
   <p><strong>Returns:</strong></p>
   <table>
@@ -1118,16 +1153,20 @@ to the TIF file of the volumetric data associated with a given scan.</p>
     <tbody>
         <tr>
           <td>
-                <code>str, <span title="pathlib.Path">Path</span></code>
+                <code>(str, <span title="pathlib.Path">Path</span>)</code>
           </td>
-          <td><p>Full path to the TIF file of the volumetric data (Path or str).</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Full path to the TIF file of the volumetric data (Path or str).</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>element_zstack/volume.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">80</span>
+          <details class="quote">
+            <summary>Source code in <code>element_zstack/volume.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">80</span>
 <span class="normal">81</span>
 <span class="normal">82</span>
 <span class="normal">83</span>
@@ -1143,7 +1182,7 @@ to the TIF file of the volumetric data associated with a given scan.</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">_linking_module</span><span class="o">.</span><span class="n">get_volume_tif_file</span><span class="p">(</span><span class="n">scan_key</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
@@ -1158,18 +1197,20 @@ to the TIF file of the volumetric data associated with a given scan.</p>
 
 
 <h2 id="element_zstack.volume.Volume" class="doc doc-heading">
-        <code>Volume</code>
+          <code>Volume</code>
 
 
 <a href="#element_zstack.volume.Volume" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
   <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code><span title="datajoint">dj</span>.<span title="datajoint.Imported">Imported</span></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="datajoint">dj</span>.<span title="datajoint.Imported">Imported</span></code></p>
 
   
       <p>Details about the volumetric microscopic imaging scans.</p>
+
+
 
   <p><strong>Attributes:</strong></p>
   <table>
@@ -1186,50 +1227,73 @@ to the TIF file of the volumetric data associated with a given scan.</p>
           <td>
                 <code>foreign key</code>
           </td>
-          <td><p>Primary key from <code>imaging.Scan</code>.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Primary key from <code>imaging.Scan</code>.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>px_width</code></td>
           <td>
                 <code>int</code>
           </td>
-          <td><p>total number of voxels in the x dimension.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>total number of voxels in the x dimension.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>px_height</code></td>
           <td>
                 <code>int</code>
           </td>
-          <td><p>total number of voxels in the y dimension.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>total number of voxels in the y dimension.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>px_depth</code></td>
           <td>
                 <code>int</code>
           </td>
-          <td><p>total number of voxels in the z dimension.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>total number of voxels in the z dimension.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>depth_mean_brightness</code></td>
           <td>
                 <code>longblob</code>
           </td>
-          <td><p>optional, mean brightness of each slice across</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>optional, mean brightness of each slice across</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>volume_file_path</code></td>
           <td>
                 <code>str</code>
           </td>
-          <td><p>Relative path of the volumetric data with shape (z, y, x)</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Relative path of the volumetric data with shape (z, y, x)</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
 
-
-        <details class="quote">
-          <summary>Source code in <code>element_zstack/volume.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 93</span>
+            <details class="quote">
+              <summary>Source code in <code>element_zstack/volume.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 93</span>
 <span class="normal"> 94</span>
 <span class="normal"> 95</span>
 <span class="normal"> 96</span>
@@ -1313,11 +1377,12 @@ to the TIF file of the volumetric data associated with a given scan.</p>
             <span class="p">)</span>
         <span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-        </details>
+            </details>
 
   
 
   <div class="doc doc-children">
+
 
 
 
@@ -1339,9 +1404,9 @@ to the TIF file of the volumetric data associated with a given scan.</p>
   
       <p>Populate the Volume table with volumetric microscopic imaging data.</p>
 
-      <details class="quote">
-        <summary>Source code in <code>element_zstack/volume.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">117</span>
+          <details class="quote">
+            <summary>Source code in <code>element_zstack/volume.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">117</span>
 <span class="normal">118</span>
 <span class="normal">119</span>
 <span class="normal">120</span>
@@ -1377,7 +1442,7 @@ to the TIF file of the volumetric data associated with a given scan.</p>
         <span class="p">)</span>
     <span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
@@ -1401,18 +1466,20 @@ to the TIF file of the volumetric data associated with a given scan.</p>
 
 
 <h2 id="element_zstack.volume.VoxelSize" class="doc doc-heading">
-        <code>VoxelSize</code>
+          <code>VoxelSize</code>
 
 
 <a href="#element_zstack.volume.VoxelSize" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
   <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code><span title="datajoint">dj</span>.<span title="datajoint.Manual">Manual</span></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="datajoint">dj</span>.<span title="datajoint.Manual">Manual</span></code></p>
 
   
       <p>Voxel size information about a volume in millimeters.</p>
+
+
 
   <p><strong>Attributes:</strong></p>
   <table>
@@ -1429,36 +1496,51 @@ to the TIF file of the volumetric data associated with a given scan.</p>
           <td>
                 <code>foreign key</code>
           </td>
-          <td><p>Primary key from <code>Volume</code>.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Primary key from <code>Volume</code>.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>width</code></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>Voxel size in mm in the x dimension.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Voxel size in mm in the x dimension.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>height</code></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>Voxel size in mm in the y dimension.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Voxel size in mm in the y dimension.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>depth</code></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>Voxel size in mm in the z dimension.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Voxel size in mm in the z dimension.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
 
-
-        <details class="quote">
-          <summary>Source code in <code>element_zstack/volume.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">137</span>
+            <details class="quote">
+              <summary>Source code in <code>element_zstack/volume.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">137</span>
 <span class="normal">138</span>
 <span class="normal">139</span>
 <span class="normal">140</span>
@@ -1494,7 +1576,7 @@ to the TIF file of the volumetric data associated with a given scan.</p>
 <span class="s2">    depth: float # voxel size in mm in the z dimension</span>
 <span class="s2">    &quot;&quot;&quot;</span>
 </code></pre></div></td></tr></table></div>
-        </details>
+            </details>
 
   
 
@@ -1520,19 +1602,21 @@ to the TIF file of the volumetric data associated with a given scan.</p>
 
 
 <h2 id="element_zstack.volume.SegmentationParamSet" class="doc doc-heading">
-        <code>SegmentationParamSet</code>
+          <code>SegmentationParamSet</code>
 
 
 <a href="#element_zstack.volume.SegmentationParamSet" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
   <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code><span title="datajoint">dj</span>.<span title="datajoint.Lookup">Lookup</span></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="datajoint">dj</span>.<span title="datajoint.Lookup">Lookup</span></code></p>
 
   
       <p>Parameter set used for segmentation of the volumetric microscopic imaging
 scan.</p>
+
+
 
   <p><strong>Attributes:</strong></p>
   <table>
@@ -1549,43 +1633,62 @@ scan.</p>
           <td>
                 <code>int</code>
           </td>
-          <td><p>Unique parameter set identifier.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Unique parameter set identifier.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>segmentation_method</code></td>
           <td>
                 <code>str</code>
           </td>
-          <td><p>Name of the segmentation method (e.g.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Name of the segmentation method (e.g.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>paramset_desc</code></td>
           <td>
                 <code>str</code>
           </td>
-          <td><p>Optional. Parameter set description.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Optional. Parameter set description.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>params</code></td>
           <td>
                 <code>longblob</code>
           </td>
-          <td><p>Parameter set. Dictionary of all applicable</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Parameter set. Dictionary of all applicable</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>paramset_hash</code></td>
           <td>
                 <code>uuid</code>
           </td>
-          <td><p>A universally unique identifier for the parameter set.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>A universally unique identifier for the parameter set.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
 
-
-        <details class="quote">
-          <summary>Source code in <code>element_zstack/volume.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">157</span>
+            <details class="quote">
+              <summary>Source code in <code>element_zstack/volume.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">157</span>
 <span class="normal">158</span>
 <span class="normal">159</span>
 <span class="normal">160</span>
@@ -1735,11 +1838,12 @@ scan.</p>
                 <span class="p">)</span>
             <span class="bp">cls</span><span class="o">.</span><span class="n">insert1</span><span class="p">(</span><span class="n">param_dict</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-        </details>
+            </details>
 
   
 
   <div class="doc doc-children">
+
 
 
 
@@ -1765,6 +1869,8 @@ scan.</p>
   
       <p>Inserts new parameters into the table.</p>
 
+
+
   <p><strong>Parameters:</strong></p>
   <table>
     <thead>
@@ -1781,7 +1887,11 @@ scan.</p>
           <td>
                 <code>str</code>
           </td>
-          <td><p>name of the segmentation method (e.g. cellpose)</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>name of the segmentation method (e.g. cellpose)</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1791,7 +1901,11 @@ scan.</p>
           <td>
                 <code>dict</code>
           </td>
-          <td><p>segmentation parameters</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>segmentation parameters</p>
+            </div>
+          </td>
           <td>
               <em>required</em>
           </td>
@@ -1801,7 +1915,11 @@ scan.</p>
           <td>
                 <code>str</code>
           </td>
-          <td><p>description of the parameter set</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>description of the parameter set</p>
+            </div>
+          </td>
           <td>
                 <code>&#39;&#39;</code>
           </td>
@@ -1811,7 +1929,11 @@ scan.</p>
           <td>
                 <code>int</code>
           </td>
-          <td><p>Unique parameter set ID. Defaults to None.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Unique parameter set ID. Defaults to None.</p>
+            </div>
+          </td>
           <td>
                 <code>None</code>
           </td>
@@ -1819,9 +1941,9 @@ scan.</p>
     </tbody>
   </table>
 
-      <details class="quote">
-        <summary>Source code in <code>element_zstack/volume.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">182</span>
+          <details class="quote">
+            <summary>Source code in <code>element_zstack/volume.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">182</span>
 <span class="normal">183</span>
 <span class="normal">184</span>
 <span class="normal">185</span>
@@ -1921,7 +2043,7 @@ scan.</p>
             <span class="p">)</span>
         <span class="bp">cls</span><span class="o">.</span><span class="n">insert1</span><span class="p">(</span><span class="n">param_dict</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
@@ -1945,18 +2067,20 @@ scan.</p>
 
 
 <h2 id="element_zstack.volume.SegmentationTask" class="doc doc-heading">
-        <code>SegmentationTask</code>
+          <code>SegmentationTask</code>
 
 
 <a href="#element_zstack.volume.SegmentationTask" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
   <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code><span title="datajoint">dj</span>.<span title="datajoint.Manual">Manual</span></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="datajoint">dj</span>.<span title="datajoint.Manual">Manual</span></code></p>
 
   
       <p>Defines the method and parameter set which will be used to segment a volume in the downstream <code>Segmentation</code> table.  This table currently supports triggering segmentation with <code>cellpose</code>.</p>
+
+
 
   <p><strong>Attributes:</strong></p>
   <table>
@@ -1973,36 +2097,51 @@ scan.</p>
           <td>
                 <code>foreign key</code>
           </td>
-          <td><p>Primary key from <code>Volume</code>.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Primary key from <code>Volume</code>.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>SegmentationParamSet</code></td>
           <td>
                 <code>foreign key</code>
           </td>
-          <td><p>Primary key from</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Primary key from</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>segmentation_output_dir</code></td>
           <td>
                 <code>str</code>
           </td>
-          <td><p>Optional. Output directory of the</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Optional. Output directory of the</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>task_mode</code></td>
           <td>
                 <code>enum</code>
           </td>
-          <td><p><code>Trigger</code> computes segmentation or <code>load</code> imports existing results.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p><code>Trigger</code> computes segmentation or <code>load</code> imports existing results.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
 
-
-        <details class="quote">
-          <summary>Source code in <code>element_zstack/volume.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">234</span>
+            <details class="quote">
+              <summary>Source code in <code>element_zstack/volume.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">234</span>
 <span class="normal">235</span>
 <span class="normal">236</span>
 <span class="normal">237</span>
@@ -2042,7 +2181,7 @@ scan.</p>
 <span class="s2">    task_mode=&#39;load&#39;: enum(&#39;load&#39;, &#39;trigger&#39;)</span>
 <span class="s2">    &quot;&quot;&quot;</span>
 </code></pre></div></td></tr></table></div>
-        </details>
+            </details>
 
   
 
@@ -2068,18 +2207,20 @@ scan.</p>
 
 
 <h2 id="element_zstack.volume.Segmentation" class="doc doc-heading">
-        <code>Segmentation</code>
+          <code>Segmentation</code>
 
 
 <a href="#element_zstack.volume.Segmentation" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
   <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code><span title="datajoint">dj</span>.<span title="datajoint.Computed">Computed</span></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="datajoint">dj</span>.<span title="datajoint.Computed">Computed</span></code></p>
 
   
       <p>Performs segmentation on the volume (and with the method and parameter set) defined in the <code>SegmentationTask</code> table.</p>
+
+
 
   <p><strong>Attributes:</strong></p>
   <table>
@@ -2096,15 +2237,18 @@ scan.</p>
           <td>
                 <code>foreign key</code>
           </td>
-          <td><p>Primary key from <code>SegmentationTask</code>.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Primary key from <code>SegmentationTask</code>.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
 
-
-        <details class="quote">
-          <summary>Source code in <code>element_zstack/volume.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">256</span>
+            <details class="quote">
+              <summary>Source code in <code>element_zstack/volume.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">256</span>
 <span class="normal">257</span>
 <span class="normal">258</span>
 <span class="normal">259</span>
@@ -2302,7 +2446,7 @@ scan.</p>
         <span class="bp">self</span><span class="o">.</span><span class="n">insert1</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">Mask</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">mask_entries</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-        </details>
+            </details>
 
   
 
@@ -2319,18 +2463,20 @@ scan.</p>
 
 
 <h3 id="element_zstack.volume.Segmentation.Mask" class="doc doc-heading">
-        <code>Mask</code>
+          <code>Mask</code>
 
 
 <a href="#element_zstack.volume.Segmentation.Mask" class="headerlink" title="Permanent link">&para;</a></h3>
 
 
   <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code><span title="datajoint">dj</span>.<span title="datajoint.Part">Part</span></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="datajoint">dj</span>.<span title="datajoint.Part">Part</span></code></p>
 
   
       <p>Details of the masks identified from the segmentation.</p>
+
+
 
   <p><strong>Attributes:</strong></p>
   <table>
@@ -2347,78 +2493,117 @@ scan.</p>
           <td>
                 <code>foreign key</code>
           </td>
-          <td><p>Primary key from <code>Segmentation</code>.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Primary key from <code>Segmentation</code>.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>mask</code></td>
           <td>
                 <code>int</code>
           </td>
-          <td><p>Unique mask identifier.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Unique mask identifier.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>mask_npix</code></td>
           <td>
                 <code>int</code>
           </td>
-          <td><p>Number of pixels in the mask.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Number of pixels in the mask.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>mask_center_x</code></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>Center x coordinate in pixels.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Center x coordinate in pixels.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>mask_center_y</code></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>Center y coordinate in pixels.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Center y coordinate in pixels.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>mask_center_z</code></td>
           <td>
                 <code>float</code>
           </td>
-          <td><p>Center z coordinate in pixels.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Center z coordinate in pixels.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>mask_xpix</code></td>
           <td>
                 <code>longblob</code>
           </td>
-          <td><p>X coordinates in pixels.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>X coordinates in pixels.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>mask_ypix</code></td>
           <td>
                 <code>longblob</code>
           </td>
-          <td><p>Y coordinates in pixels.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Y coordinates in pixels.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>mask_zpix</code></td>
           <td>
                 <code>longblob</code>
           </td>
-          <td><p>Z coordinates in pixels.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Z coordinates in pixels.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>mask_weights</code></td>
           <td>
                 <code>longblob</code>
           </td>
-          <td><p>Weights of the mask at the indices above.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Weights of the mask at the indices above.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
 
-
-        <details class="quote">
-          <summary>Source code in <code>element_zstack/volume.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">268</span>
+            <details class="quote">
+              <summary>Source code in <code>element_zstack/volume.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">268</span>
 <span class="normal">269</span>
 <span class="normal">270</span>
 <span class="normal">271</span>
@@ -2476,7 +2661,7 @@ scan.</p>
 <span class="s2">    mask_weights    : longblob  # weights of the mask at the indices above</span>
 <span class="s2">    &quot;&quot;&quot;</span>
 </code></pre></div></td></tr></table></div>
-        </details>
+            </details>
 
   
 
@@ -2497,6 +2682,7 @@ scan.</p>
 
 
 
+
 <div class="doc doc-object doc-function">
 
 
@@ -2511,9 +2697,9 @@ scan.</p>
   
       <p>Populate the Segmentation and Segmentation.Mask tables with results of cellpose segmentation.</p>
 
-      <details class="quote">
-        <summary>Source code in <code>element_zstack/volume.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">298</span>
+          <details class="quote">
+            <summary>Source code in <code>element_zstack/volume.py</code></summary>
+            <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">298</span>
 <span class="normal">299</span>
 <span class="normal">300</span>
 <span class="normal">301</span>
@@ -2627,7 +2813,7 @@ scan.</p>
     <span class="bp">self</span><span class="o">.</span><span class="n">insert1</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">Mask</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">mask_entries</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-      </details>
+          </details>
   </div>
 
 </div>
@@ -2767,12 +2953,14 @@ scan.</p>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.integrate", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.integrate", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
-        <script src="https://js-na1.hs-scripts.com/23133402.js"></script>
+        
+          <script src="https://js-na1.hs-scripts.com/23133402.js"></script>
+        
       
     
   </body>

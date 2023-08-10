@@ -17,7 +17,7 @@
         <link rel="next" href="../../../changelog/">
       
       <link rel="icon" href="../../../assets/images/company-logo-blue.png">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.21">
     
     
       
@@ -25,10 +25,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -735,18 +735,20 @@
 
 
 <h2 id="workflow_zstack.reference.Device" class="doc doc-heading">
-        <code>Device</code>
+          <code>Device</code>
 
 
 <a href="#workflow_zstack.reference.Device" class="headerlink" title="Permanent link">&para;</a></h2>
 
 
   <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code><span title="datajoint">dj</span>.<span title="datajoint.Lookup">Lookup</span></code></p>
+          <p class="doc doc-class-bases">
+            Bases: <code><span title="datajoint">dj</span>.<span title="datajoint.Lookup">Lookup</span></code></p>
 
   
       <p>Table for managing lab equipment.</p>
+
+
 
   <p><strong>Attributes:</strong></p>
   <table>
@@ -763,29 +765,40 @@
           <td>
                 <code> varchar(32) </code>
           </td>
-          <td><p>Device short name.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Device short name.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>modality</code></td>
           <td>
                 <code> varchar(64) </code>
           </td>
-          <td><p>Modality for which this device is used.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Modality for which this device is used.</p>
+            </div>
+          </td>
         </tr>
         <tr>
           <td><code>description</code></td>
           <td>
                 <code> varchar(256) </code>
           </td>
-          <td><p>Optional. Description of device.</p></td>
+          <td>
+            <div class="doc-md-description">
+              <p>Optional. Description of device.</p>
+            </div>
+          </td>
         </tr>
     </tbody>
   </table>
 
-
-        <details class="quote">
-          <summary>Source code in <code>workflow_zstack/reference.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 8</span>
+            <details class="quote">
+              <summary>Source code in <code>workflow_zstack/reference.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span>
@@ -823,7 +836,7 @@
         <span class="p">[</span><span class="s2">&quot;scanner1&quot;</span><span class="p">,</span> <span class="s2">&quot;fluorescence microscope&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">],</span>
     <span class="p">]</span>
 </code></pre></div></td></tr></table></div>
-        </details>
+            </details>
 
   
 
@@ -965,12 +978,14 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.integrate", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.integrate", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
-        <script src="https://js-na1.hs-scripts.com/23133402.js"></script>
+        
+          <script src="https://js-na1.hs-scripts.com/23133402.js"></script>
+        
       
     
   </body>
