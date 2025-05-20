@@ -32,7 +32,7 @@ also provides a tutorial environment and notebooks to learn the pipeline.
 
 + [Interactive tutorial on GitHub Codespaces](#interactive-tutorial)
 
-+ [Documentation](https://datajoint.com/docs/elements/element-zstack)
++ [Documentation](https://docs.datajoint.com/elements/element-zstack/)
 
 
 ## Support

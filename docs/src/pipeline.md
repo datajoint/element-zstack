@@ -18,13 +18,13 @@ more detailed documentation on each table, see the API docs for the respective s
 
 ### `lab` schema
 
-- For further details see the [lab schema API docs](https://datajoint.com/docs/elements/element-lab/latest/api/element_lab/lab/)
+- For further details see the [lab schema API docs](https://docs.datajoint.com/elements/element-lab/latest/api/element_lab/lab/)
 
 | Table | Description |
 | --- | --- |
 | Device | Scanner metadata |
 
-### `subject` schema ([API docs](https://datajoint.com/docs/elements/element-animal/latest/api/element_animal/subject))
+### `subject` schema ([API docs](https://docs.datajoint.com/elements/element-animal/latest/api/element_animal/subject/))
 
 - Although not required, most choose to connect the `Session` table to a `Subject` table.
 
@@ -32,13 +32,13 @@ more detailed documentation on each table, see the API docs for the respective s
 | --- | --- |
 | Subject | Basic information of the research subject |
 
-### `session` schema ([API docs](https://datajoint.com/docs/elements/element-session/latest/api/element_session/session_with_datetime))
+### `session` schema ([API docs](https://docs.datajoint.com/elements/element-session/latest/api/element_session/session_with_datetime/))
 
 | Table | Description |
 | --- | --- |
 | Session | Unique experimental session identifier |
 
-### `scan` schema ([API docs](https://datajoint.com/docs/elements/element-calcium-imaging/latest/api/element_calcium_imaging/scan))
+### `scan` schema ([API docs](https://docs.datajoint.com/elements/element-calcium-imaging/latest/api/element_calcium_imaging/scan/))
 
 | Table | Description |
 | --- | --- |
